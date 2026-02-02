@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECHALOMANIA - Règles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MECHALOMANIA // RULES_MODE</div>
+        <ul>
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="rules.html" class="active">RÈGLES</a></li>
+            <li><a href="database.html">BASE DE DONNÉES</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h2>PROTOCOLE DE JEU</h2>
+
+        <div class="rule-block">
+            <h3>1. MISE EN PLACE</h3>
+            <ul>
+                <li>Plateau de 5x5 cases au centre. Robots dans chaque coin.</li>
+                <li>Chaque joueur reçoit <strong>3 points de vie</strong>.</li>
+                <li>Chaque joueur reçoit <strong>8 tuiles de direction</strong> (1 de chaque sens).</li>
+                <li><strong>Main de départ :</strong> Piochez 3 cartes événements + 1 par joueur manquant (4 joueurs étant le standard).</li>
+                <li>Le premier joueur est décidé au choix, puis sens des aiguilles d'une montre.</li>
+            </ul>
+        </div>
+
+        <div class="rule-block">
+            <h3>2. DÉROULÉ D'UN TOUR</h3>
+            
+            <div class="phase">
+                <h4>PHASE 1 : CHOIX DES ÉVÉNEMENTS</h4>
+                <p>Chaque joueur choisit 1 carte de sa main (+1 par joueur manquant/éliminé) et la place face cachée.</p>
+            </div>
+
+            <div class="phase">
+                <h4>PHASE 2 : APPLICATION DES ÉVÉNEMENTS</h4>
+                <p>Les cartes sont révélées. Les effets sont appliqués dans l'ordre du tour. Les événements globaux de fin de tour vont sur la piste dédiée.</p>
+            </div>
+
+            <div class="phase">
+                <h4>PHASE 3 : CHOIX DES DÉPLACEMENTS</h4>
+                <p>Chaque joueur place une <strong>tuile de direction</strong> face cachée devant lui.</p>
+            </div>
+
+            <div class="phase">
+                <h4>PHASE 4 : APPLICATION DES DÉPLACEMENTS</h4>
+                <p>Tous les joueurs effectuent leur déplacement en même temps.</p>
+            </div>
+
+            <div class="phase">
+                <h4>PHASE 5 : ÉVÉNEMENTS IMMÉDIATS</h4>
+                <p>Application des effets d'emplacements immédiats (Mines, Portails, etc.).</p>
+            </div>
+
+            <div class="phase">
+                <h4>PHASE 6 : COMBAT</h4>
+                <p>Si deux joueurs sont sur la même case :</p>
+                <ul>
+                    <li>Utilisation possible d'un jeton <strong>Armement</strong> pour gagner automatiquement avant le lancer.</li>
+                    <li>Sinon, lancer de dé : le plus haut l'emporte.</li>
+                    <li>Le vainqueur place le perdant sur une case adjacente libre.</li>
+                    <li>Le perdant perd 1 vie.</li>
+                </ul>
+            </div>
+
+            <div class="phase">
+                <h4>PHASE 7 : ÉVÉNEMENTS DE FIN DE TOUR</h4>
+                <p>Appliquez la piste d'événements (gauche à droite), puis les emplacements sur le terrain (Bleus avant Rouges).</p>
+            </div>
+
+            <div class="phase">
+                <h4>PHASE 8 : FIN DU TOUR</h4>
+                <p>Le jeton Premier Joueur tourne. Chaque joueur pioche jusqu'à avoir 3 cartes (+1 par joueur manquant/éliminé).</p>
+            </div>
+        </div>
+
+        <div class="rule-block alert-border">
+            <h3>RÈGLES SUPPLÉMENTAIRES</h3>
+            <ul>
+                <li><strong>Compteur de tours :</strong> Retournez les jetons Bombes à la fin de leur premier tour sur le plateau[cite: 3].</li>
+                <li><strong>Réaction en chaîne :</strong> Si un emplacement rouge est détruit, son effet s'active immédiatement[cite: 3].</li>
+                <li><strong>Éjection :</strong> Si une carte vous sort du plateau : -1 Vie, puis replacez votre robot sur la case de votre choix[cite: 3].</li>
+            </ul>
+        </div>
+        <div class="download-zone">
+            <h3>MANUEL OFFICIEL</h3>
+            <p>Besoin de la version originale ? Téléchargez le scan des règles officielles.</p>
+            
+            <a href="rules.pdf" class="btn download-btn" download="MECHALOMANIA_Regles.pdf">
+                ⬇️ TÉLÉCHARGER LE PDF (SCAN)
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>MECHALOMANIA © 2177. Fin de transmission.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

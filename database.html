@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECHALOMANIA - Base de Données</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MECHALOMANIA // DATA_BASE</div>
+        <ul>
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="rules.html">RÈGLES</a></li>
+            <li><a href="database.html" class="active">BASE DE DONNÉES</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h2>ENCYCLOPÉDIE DES CARTES</h2>
+        
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">TOUT VOIR</button>
+            <button class="filter-btn" data-filter="red">ROUGE (OFFENSIF)</button>
+            <button class="filter-btn" data-filter="blue">BLEU (SOUTIEN)</button>
+            <button class="filter-btn" data-filter="yellow">JAUNE (UTILITAIRE)</button>
+        </div>
+
+        <div class="cards-grid">
+            
+            <div class="card red">
+                <h4>BOMBE</h4>
+                <p class="meta">Type: Emplacement | Act: Fin de 2 tours</p>
+                <p>Explose zone 3x3. Tout le monde perd 1 vie. Détruit les emplacements.</p>
+            </div>
+            <div class="card red">
+                <h4>BOMBE X</h4>
+                <p class="meta">Type: Emplacement | Act: Fin de 2 tours</p>
+                <p>Explose en forme de croix (Ligne + Colonne). Tout le monde perd 1 vie.</p>
+            </div>
+            <div class="card red">
+                <h4>MINE</h4>
+                <p class="meta">Type: Emplacement | Act: Immédiate</p>
+                <p>Explose quand un joueur marche dessus. Zone 3x3. -1 Vie.</p>
+            </div>
+            <div class="card red">
+                <h4>TIR ORBITAL</h4>
+                <p class="meta">Type: Emplacement | Act: Fin du tour</p>
+                <p>Frappe une case ciblée. Détruit tout. Si un joueur est présent : <strong>-2 VIES</strong>.</p>
+            </div>
+             <div class="card red">
+                <h4>SÉISME</h4>
+                <p class="meta">Type: Événement global | Act: Fin du tour</p>
+                <p>Tous les joueurs sur les bords du plateau perdent 1 vie. Les emplacements ne sont pas détruits[cite: 5].</p>
+            </div>
+
+            <div class="card blue">
+                <h4>KIT DE RÉPARATION</h4>
+                <p class="meta">Type: Emplacement | Act: Fin du tour</p>
+                <p>Case non-adjacente. Rend 1 point de vie au joueur présent[cite: 5].</p>
+            </div>
+            <div class="card blue">
+                <h4>CHAMP DE FORCE</h4>
+                <p class="meta">Type: Emplacement | Act: Fin du tour</p>
+                <p>Immunise aux dégâts jusqu'au déplacement ou destruction du champ[cite: 5].</p>
+            </div>
+            <div class="card blue">
+                <h4>ARMEMENT</h4>
+                <p class="meta">Type: Emplacement | Act: Fin du tour</p>
+                <p>Donne un jeton Armement. Permet de <strong>gagner un combat avant le lancer de dé</strong>[cite: 5].</p>
+            </div>
+            <div class="card blue">
+                <h4>TOURELLE</h4>
+                <p class="meta">Type: Bleu | Act: Fin du tour</p>
+                <p>Le joueur suivant <strong>le plus proche</strong> de la tourelle perd 1 vie[cite: 6].</p>
+            </div>
+
+            <div class="card yellow">
+                <h4>TREMPLIN</h4>
+                <p class="meta">Type: Emplacement | Act: Immédiate</p>
+                <p>Donne un déplacement supplémentaire. Interdit de rester dessus à la fin du tour[cite: 6].</p>
+            </div>
+            <div class="card yellow">
+                <h4>PORTAIL</h4>
+                <p class="meta">Type: Emplacement | Act: Immédiate</p>
+                <p>Placez 2 emplacements. Permet de se déplacer de l'un à l'autre. Inutile s'il n'en reste qu'un[cite: 6].</p>
+            </div>
+            <div class="card yellow">
+                <h4>SURCHARGE</h4>
+                <p class="meta">Type: Événement global | Act: Immédiate</p>
+                <p>Lors de la phase de déplacement, tous les déplacements sont de <strong>2 cases</strong> au lieu d'1[cite: 6].</p>
+            </div>
+            <div class="card yellow">
+                <h4>PERMUTATION</h4>
+                <p class="meta">Type: Événement global | Act: Immédiate</p>
+                <p>Avant le déplacement, échangez la position de votre robot avec un autre[cite: 6].</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>MECHALOMANIA © 2177. Fin de transmission.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
