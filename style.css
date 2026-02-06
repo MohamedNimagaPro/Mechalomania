@@ -189,6 +189,7 @@ footer {
     nav ul { flex-wrap: wrap; justify-content: center; }
 }
 
+/* DOWNLOAD ZONE */
 .download-zone {
     margin-top: 60px;
     padding: 40px;
@@ -198,7 +199,6 @@ footer {
     position: relative;
 }
 
-/* Petit effet visuel "coin coupé" tech */
 .download-zone::before {
     content: '[ DOWNLOAD_LINK ]';
     position: absolute;
@@ -212,7 +212,7 @@ footer {
 }
 
 .download-zone h3 {
-    border: none; /* On enlève la bordure gauche habituelle */
+    border: none;
     margin-bottom: 10px;
     color: #fff;
 }
@@ -227,6 +227,7 @@ footer {
     color: #00ff41;
     border: 2px solid #00ff41;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .download-btn:hover {
@@ -234,4 +235,149 @@ footer {
     color: #000;
     box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
     transform: scale(1.05);
+}
+
+/* --- PAGE CROWDFUNDING (NOUVEAU) --- */
+
+/* Barre de progression */
+.funding-status {
+    background: #111;
+    padding: 40px;
+    border: 1px solid #333;
+    margin-bottom: 50px;
+}
+
+.amount {
+    font-size: 3rem;
+    color: #00ff41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    margin-bottom: 20px;
+}
+
+.goal {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.progress-container {
+    width: 100%;
+    height: 30px;
+    background-color: #222;
+    border: 1px solid #444;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #00ff41,
+        #00ff41 10px,
+        #00cc33 10px,
+        #00cc33 20px
+    );
+    box-shadow: 0 0 15px #00ff41;
+    transition: width 1.5s ease-out;
+}
+
+.backers-count {
+    color: #888;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Layout 2 colonnes */
+.split-layout {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.main-col { flex: 2; min-width: 300px; }
+.side-col { flex: 1; min-width: 300px; }
+
+/* Stretch Goals */
+.stretch-goal {
+    display: flex;
+    align-items: center;
+    background: #0f0f0f;
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.stretch-goal.unlocked {
+    opacity: 1;
+    border-color: #00ff41;
+    background: rgba(0, 255, 65, 0.05);
+}
+
+.sg-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    min-width: 100px;
+    border-right: 2px solid #333;
+    margin-right: 20px;
+}
+
+.sg-info h4 { color: #00ff41; margin-bottom: 5px; }
+.status-icon { font-size: 1.5rem; margin-left: auto; }
+
+/* Pledge Cards */
+.pledge-card {
+    background: #111;
+    border: 1px solid #444;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.pledge-card:hover {
+    transform: scale(1.02);
+    border-color: #fff;
+}
+
+.pledge-card.recommended {
+    border: 2px solid #00ff41;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+}
+
+.pledge-card.recommended::before {
+    content: 'RECOMMANDÉ';
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #00ff41;
+    color: #000;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.pledge-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.pledge-header h4 { margin: 0; font-size: 1.1rem; }
+.price { font-size: 1.4rem; color: #fff; font-weight: bold; }
+.pledge-desc { font-style: italic; margin-bottom: 15px; color: #aaa; }
+
+.pledge-card ul { padding-left: 0; margin-bottom: 20px; }
+.pledge-card li { list-style: none; margin-bottom: 8px; font-size: 0.9rem; }
+
+.full-width { width: 100%; text-align: center; }
+
+@media (max-width: 768px) {
+    .split-layout { flex-direction: column; }
+    .sg-amount { font-size: 1.1rem; min-width: 80px; }
 }
