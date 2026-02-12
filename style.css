@@ -63,10 +63,10 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 5px #fff; }
     padding: 15px 40px;
     border: 2px solid #00ff41;
     color: #00ff41;
-    background: #000;
     font-weight: bold;
     font-size: 1.1rem;
     display: inline-block;
+    background: #000; /* Ajout pour lisibilité */
 }
 .btn:hover { background: #00ff41; color: #000; box-shadow: 0 0 25px #00ff41; }
 
@@ -229,7 +229,6 @@ footer {
 }
 
 /* --- PAGE CROWDFUNDING --- */
-
 .funding-status {
     background: #111;
     padding: 40px;
@@ -340,7 +339,7 @@ footer {
 .price { font-size: 1.4rem; color: #fff; font-weight: bold; }
 .pledge-desc { font-style: italic; margin-bottom: 15px; color: #aaa; }
 
-.pledge-card ul { padding-left: 0; margin-bottom: 20px;  }
+.pledge-card ul { padding-left: 0; margin-bottom: 20px; }
 .pledge-card li { list-style: none; margin-bottom: 8px; font-size: 0.9rem; }
 
 .full-width { width: 100%; text-align: center; }
@@ -350,7 +349,7 @@ footer {
     .sg-amount { font-size: 1.1rem; min-width: 80px; }
 }
 
-/* --- STYLE POUR LE GIF DANS LE CROWDFUNDING (Re-ajouté) --- */
+/* --- STYLE POUR LE GIF DANS LE CROWDFUNDING --- */
 .pledge-gif-container {
     margin-top: 12px;
     margin-bottom: 12px;
@@ -375,7 +374,7 @@ footer {
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
 }
 
-/* --- PAGE MATÉRIEL (STYLE ZIG-ZAG) - Pour ne pas casser l'autre page --- */
+/* --- PAGE MATÉRIEL (STYLE ZIG-ZAG) --- */
 .material-row {
     display: flex;
     align-items: center;
@@ -433,11 +432,11 @@ footer {
     .material-info h3 { border-left: none; border-bottom: 2px solid #00ff41; padding: 0 0 10px 0; }
     .img-frame { height: auto; max-height: 300px; }
 }
-/* --- SECTION VIDÉOS (TERMINAL STYLE) --- */
 
+/* --- SECTION VIDÉOS (TERMINAL STYLE + YOUTUBE) --- */
 .video-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 colonnes */
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-top: 30px;
 }
@@ -446,18 +445,17 @@ footer {
     background: #111;
     border: 1px solid #333;
     border-radius: 5px;
-    overflow: hidden; /* Pour que la vidéo ne dépasse pas des bords arrondis */
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-terminal:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 255, 65, 0.1); /* Lueur verte au survol */
+    box-shadow: 0 15px 40px rgba(0, 255, 65, 0.1);
     border-color: #00ff41;
 }
 
-/* En-tête style "fenêtre mac/linux" */
 .terminal-header {
     background: #222;
     padding: 10px 15px;
@@ -473,7 +471,6 @@ footer {
     display: inline-block;
     margin-right: 5px;
 }
-/* On réutilise les couleurs existantes ou on en définit */
 .dot.red { background: #ff5f56; }
 .dot.yellow { background: #ffbd2e; }
 .dot.green { background: #27c93f; }
@@ -486,20 +483,28 @@ footer {
     letter-spacing: 1px;
 }
 
-.video-wrapper video {
+/* Wrapper responsive pour YouTube (Ratio 16:9) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: block; /* Enlève la petite marge blanche en bas des vidéos */
-    outline: none;
+    height: 100%;
 }
 
-/* Responsive : Une seule colonne sur mobile */
 @media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
+    .video-grid { grid-template-columns: 1fr; }
 }
-/* --- BANDEAU D'APPEL AU DON (INJECTÉ PAR JS) --- */
 
+/* --- BANDEAU D'APPEL AU DON (INJECTÉ PAR JS) --- */
 .cta-banner-container {
     margin-top: 60px;
     margin-bottom: 20px;
@@ -517,7 +522,6 @@ footer {
     box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
 }
 
-/* Petit effet de scanline en arrière-plan */
 .cta-banner::before {
     content: '';
     position: absolute;
@@ -538,27 +542,14 @@ footer {
     letter-spacing: 2px;
 }
 
-/* Animation de clignotement pour le titre */
-.blink-warning {
-    animation: text-flicker 3s infinite;
-}
-
+.blink-warning { animation: text-flicker 3s infinite; }
 @keyframes text-flicker {
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
     20%, 24%, 55% { opacity: 0.5; }
 }
 
-.cta-content p {
-    color: #e0e0e0;
-    margin-bottom: 5px;
-    font-size: 1.1rem;
-}
-
-.cta-content .cta-sub {
-    color: #888;
-    font-size: 0.9rem;
-    font-style: italic;
-}
+.cta-content p { color: #e0e0e0; margin-bottom: 5px; font-size: 1.1rem; }
+.cta-content .cta-sub { color: #888; font-size: 0.9rem; font-style: italic; }
 
 .cta-btn {
     background: #00ff41;
@@ -567,7 +558,7 @@ footer {
     font-size: 1rem;
     padding: 15px 25px;
     border: none;
-    white-space: nowrap; /* Empêche le texte du bouton de passer à la ligne */
+    white-space: nowrap;
     box-shadow: 0 0 15px #00ff41;
 }
 
@@ -577,16 +568,7 @@ footer {
     transform: scale(1.05);
 }
 
-/* RESPONSIVE : Sur mobile, on met les éléments l'un sous l'autre */
 @media (max-width: 768px) {
-    .cta-banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    
-    .cta-btn {
-        width: 100%;
-        display: block;
-    }
+    .cta-banner { flex-direction: column; text-align: center; gap: 20px; }
+    .cta-btn { width: 100%; display: block; }
 }
