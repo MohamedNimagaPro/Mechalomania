@@ -59,22 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-    // --- 3. GESTION DES VIDÉOS (Une seule à la fois) ---
-    const videos = document.querySelectorAll('video');
 
-    if (videos.length > 0) {
-        videos.forEach(video => {
-            video.addEventListener('play', () => {
-                // Quand une vidéo commence, on met pause aux autres
-                videos.forEach(otherVideo => {
-                    if (otherVideo !== video) {
-                        otherVideo.pause();
-                    }
-                });
-            });
-        });
-    }
-    // --- 4. INJECTION DU BANDEAU "SOUTENIR" (GLOBAL) ---
+    // --- 3. INJECTION DU BANDEAU "SOUTENIR" (GLOBAL) ---
     // On vérifie qu'on n'est pas déjà sur la page crowdfunding
     if (!window.location.href.includes("crowdfunding.html")) {
         
