@@ -59,4 +59,51 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-});
+    // --- 3. GESTION DES VIDÉOS (Une seule à la fois) ---
+    const videos = document.querySelectorAll('video');
+
+    if (videos.length > 0) {
+        videos.forEach(video => {
+            video.addEventListener('play', () => {
+                // Quand une vidéo commence, on met pause aux autres
+                videos.forEach(otherVideo => {
+                    if (otherVideo !== video) {
+                        otherVideo.pause();
+                    }
+                });
+            });
+        });
+    }
+    // --- 4. INJECTION DU BANDEAU "SOUTENIR" (GLOBAL) ---
+    // On vérifie qu'on n'est pas déjà sur la page crowdfunding
+    if (!window.location.href.includes("crowdfunding.html")) {
+        
+        const footer = document.querySelector('footer');
+        
+        if (footer) {
+            // Création de la section
+            const ctaSection = document.createElement('section');
+            ctaSection.classList.add('container', 'cta-banner-container');
+            
+            // Le contenu HTML du bandeau (Version Professionnelle)
+            ctaSection.innerHTML = `
+                <div class="cta-banner">
+                    <div class="cta-content">
+                        <h3 class="blink-warning">CAMPAGNE DE FINANCEMENT EN COURS</h3>
+                        <p>Mechalomania est un projet indépendant qui a besoin de votre soutien pour voir le jour.</p>
+                        <p class="cta-sub">Participez à notre levée de fonds et obtenez des éditions exclusives du jeu.</p>
+                    </div>
+                    <div class="cta-action">
+                        <a href="crowdfunding.html" class="btn cta-btn">
+                            ACCÉDER À LA CAMPAGNE
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            // On l'insère juste AVANT le footer
+            footer.parentNode.insertBefore(ctaSection, footer);
+        }
+    }
+
+}); // Fin du DOMContentLoaded
